@@ -12,4 +12,5 @@ public abstract class Achievement
     {
         this.name=name;
     }
+    abstract boolean achievementGot();
 }
