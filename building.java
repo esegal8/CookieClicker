@@ -1,11 +1,16 @@
-public abstract class building extends CookieGame
+public abstract class Building extends CookieGame
 {
     private int gain;
-    private static int number;
-    private static double multiplier=1;
+    private int number;
+    private double multiplier;
+    public Building()
+    {
+        
+    }
     public void buy()
     {
         
         number++;
     }
+    
 }
