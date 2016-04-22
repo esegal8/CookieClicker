@@ -8,9 +8,14 @@
 public abstract class Achievement
 {
     private String name;
+    private boolean achieveGot;
     public Achievement(String name)
     {
         this.name=name;
     }
-    abstract boolean achievementGot();
+    public boolean getAchieveGot()
+    {
+        return achieveGot;
+    }
+    abstract void achievementGot();
 }
