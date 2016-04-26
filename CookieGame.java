@@ -18,4 +18,8 @@ public class CookieGame extends JApplet
     {
         bakeryName=name;
     }
+    public String getName()
+    {
+        return bakeryName;
+    }
 }
