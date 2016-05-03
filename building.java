@@ -8,7 +8,7 @@ public class Building
     private int delay;//how long it takes to gain once
     public Building(String name, int gain,double multiplier,int cost,int delay)
     {
-        //delay should be in miiliseconds
+        //delay should be in milliseconds so 1 sec=1000 millisec
         this.name=name;
         this.gain=gain;
         this.multiplier=multiplier;

@@ -1,7 +1,7 @@
 import java.util.*;
 import javax.swing.*;
 import java.applet.Applet;
-public class CookieGame extends JApplet
+public class CookieGame
 {
     private int numCookies;
     private String bakeryName="Electro Sloth";
@@ -10,9 +10,9 @@ public class CookieGame extends JApplet
     {
         return numCookies;
     }
-    public void addCookies()
+    public void addCookies(int add)
     {
-        numCookies++;
+        numCookies+=add;
     }
     public void setName(String name)
     {
@@ -21,5 +21,14 @@ public class CookieGame extends JApplet
     public String getName()
     {
         return bakeryName;
+    }
+    public void subtractCookies(int subtract)
+    {
+        if (numCookies>subtract)
+            numCookies-=subtract;
+    }
+    public void main()
+    {
+        
     }
 }
