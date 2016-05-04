@@ -1,7 +1,7 @@
 import java.util.*;
 import javax.swing.*;
 import java.applet.Applet;
-public class CookieGame
+public class CookieGame extends Applet
 {
     private int numCookies;
     private String bakeryName="Electro Sloth";
