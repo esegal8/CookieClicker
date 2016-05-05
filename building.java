@@ -6,6 +6,7 @@ public class Building
     private double multiplier;//What does this do elliot?
     private int cost;//how much one building costs
     private int delay;//how long it takes to gain once
+    
     public Building(String name, int gain,double multiplier,int cost,int delay)
     {
         //delay should be in milliseconds so 1 sec=1000 millisec
@@ -15,6 +16,7 @@ public class Building
         this.cost=cost;
         this.delay=delay;
     }
+    
     public void buy(CookieGame game)
     {
         if (game.getNumCookies()>cost)
@@ -25,6 +27,7 @@ public class Building
         }
         gain*=number;
     }
+    
     public void sell(CookieGame game)
     {
         if (number>0)
