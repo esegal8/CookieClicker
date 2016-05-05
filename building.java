@@ -1,15 +1,6 @@
 public class Building
 {
-<<<<<<< HEAD
-    private int gain;
-    private int number;
-    private double multiplier;
-    public Building(int g, double m)
-    {
-        gain = g;
-        multiplier = m;
-        number = 0;
-=======
+
     private String name;
     private int gain;//how many cookies it adds
     private int number;//how many buildings made
@@ -23,18 +14,10 @@ public class Building
         this.gain=gain;
         this.cost=cost;
         this.delay=delay;
->>>>>>> b5cf03b737686d4e2a3ead4fd4b86b7ba682d9c6
+
     }
     public void buy(CookieGame game)
     {
-<<<<<<< HEAD
-        number++;
-    }
-    public int cookies()
-    {
-        
-    }
-=======
         if (game.getNumCookies()>cost)
         {
             game.subtractCookies(cost);
@@ -55,5 +38,4 @@ public class Building
         }
         gain*=number;
     }
->>>>>>> b5cf03b737686d4e2a3ead4fd4b86b7ba682d9c6
 }
