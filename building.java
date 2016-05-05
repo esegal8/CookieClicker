@@ -7,12 +7,7 @@ public class Building
     private double multiplier=1.0;//upgrades change this number
     private int cost;//how much one building costs
     private int delay;//how long it takes to gain once
-<<<<<<< HEAD
-    
-    public Building(String name, int gain,double multiplier,int cost,int delay)
-=======
     public Building(String name, int gain,int cost,int delay)
->>>>>>> b5cf03b737686d4e2a3ead4fd4b86b7ba682d9c6
     {
         //delay should be in milliseconds so 1 sec=1000 millisec
         this.name=name;
