@@ -1,5 +1,6 @@
-public abstract class Building extends CookieGame
+public class Building
 {
+<<<<<<< HEAD
     private int gain;
     private int number;
     private double multiplier;
@@ -8,13 +9,51 @@ public abstract class Building extends CookieGame
         gain = g;
         multiplier = m;
         number = 0;
-    }
-    public void buy()
+=======
+    private String name;
+    private int gain;//how many cookies it adds
+    private int number;//how many buildings made
+    private double multiplier=1.0;//upgrades change this number
+    private int cost;//how much one building costs
+    private int delay;//how long it takes to gain once
+    public Building(String name, int gain,int cost,int delay)
     {
+        //delay should be in milliseconds so 1 sec=1000 millisec
+        this.name=name;
+        this.gain=gain;
+        this.cost=cost;
+        this.delay=delay;
+>>>>>>> b5cf03b737686d4e2a3ead4fd4b86b7ba682d9c6
+    }
+    public void buy(CookieGame game)
+    {
+<<<<<<< HEAD
         number++;
     }
     public int cookies()
     {
         
     }
+=======
+        if (game.getNumCookies()>cost)
+        {
+            game.subtractCookies(cost);
+            number++;
+            cost*=1.1;
+            delay*=.9;
+        }
+        gain*=number;
+    }
+    public void sell(CookieGame game)
+    {
+        if (number>0)
+        {
+            game.addCookies(cost);
+            number--;
+            cost/=1.1;
+            delay/=.9;
+        }
+        gain*=number;
+    }
+>>>>>>> b5cf03b737686d4e2a3ead4fd4b86b7ba682d9c6
 }
