@@ -1,2 +1,0 @@
-# CookieClicker
-ClickClickClickClickClickClickClickClickClickClickClickClickClickClickClickClickClickClick
