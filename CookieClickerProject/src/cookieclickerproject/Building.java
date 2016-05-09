@@ -46,7 +46,7 @@ public class Building {
         }
     }
     
-    public double cookieGain(CookieGame game)
+    public double cookieGain()
     {
         return gain*number*multiplier/delay;
     }

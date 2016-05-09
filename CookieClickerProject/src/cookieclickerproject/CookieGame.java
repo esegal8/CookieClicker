@@ -25,4 +25,16 @@ public class CookieGame extends CookieClickerProject
     {
         
     }
+    public double getNumCookies()
+    {
+        return 0.0;
+    }
+    public void subtractCookies(double cost)
+    {
+        
+    }
+    public void addCookies(double cost)
+    {
+    
+    }
 }
