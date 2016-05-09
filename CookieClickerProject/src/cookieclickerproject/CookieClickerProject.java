@@ -1,5 +1,14 @@
 package cookieclickerproject;
+
+/*
+ * 
+ * @author rxu8
+ */
 public class CookieClickerProject{
- CookieGame pie = new CookieGame();
- pie.goGo();
+    public static void main(String[]args)
+    {
+        CookieGame pie = new CookieGame();
+        pie.goGo();
+    }
+ 
 }

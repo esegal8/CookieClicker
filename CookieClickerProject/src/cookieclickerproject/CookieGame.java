@@ -10,9 +10,18 @@ package cookieclickerproject;
  *
  * @author esegal8
  */
+import java.util.*;
 public class CookieGame extends CookieClickerProject
 {
-    public void goGo()
+    private final String bakeryName;
+    
+    public CookieGame()
+    {
+        Scanner sc= new Scanner(System.in);
+        System.out.println("Please enter the name of your bakery: ");
+        bakeryName= sc.next();
+    }
+    public void goGo() 
     {
         
     }
