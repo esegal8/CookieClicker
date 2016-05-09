@@ -10,6 +10,10 @@ package cookieclickerproject;
  *
  * @author esegal8
  */
-public class CookieGame extends CookieClickerProject{
-    
+public class CookieGame extends CookieClickerProject
+{
+    public void goGo()
+    {
+        
+    }
 }
