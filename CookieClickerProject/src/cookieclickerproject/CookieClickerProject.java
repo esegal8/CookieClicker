@@ -7,7 +7,7 @@ package cookieclickerproject;
 public class CookieClickerProject{
     public static void main(String[]args)
     {
-        CookieGame pie = new CookieGame(0);
+        CookieGame pie = new CookieGame();
         pie.mainRunner();
         System.out.println(pie.toString());
         
