@@ -11,7 +11,7 @@ package cookieclickerproject;
  */
 public abstract class Achievement {
     private String name;
-    private boolean achieveGot;
+    private boolean achieveGot; 
     public Achievement(String name)
     {
         this.name=name;
@@ -21,4 +21,10 @@ public abstract class Achievement {
         return achieveGot;
     }
     abstract void achievementGot();
+    public Achievement unlocked()
+    {
+        achievementGot();
+        return (new Achievement("THIS IS JUST A PLACEHOLDER ACHIEVEMENT")); 
+    }
+    
 }
