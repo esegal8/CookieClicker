@@ -9,16 +9,19 @@ package cookieclickerproject;
  *
  * @author esegal8
  */
-public abstract class Achievement {
+public class Achievement {
     private String name;
-    private boolean achieveGot;
+    private boolean achieveGot=false;
     public Achievement(String name)
     {
         this.name=name;
     }
-    public boolean getAchieveGot()
+    public void setBool(boolean set)
     {
-        return achieveGot;
+        achieveGot=set;
     }
-    abstract void achievementGot();
+    public Boolean getBool()
+    {
+            return achieveGot;
+    }
 }
