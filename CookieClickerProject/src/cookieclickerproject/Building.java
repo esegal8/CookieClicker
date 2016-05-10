@@ -9,7 +9,7 @@ package cookieclickerproject;
  *
  * @author esegal8
  */
-public class Building {
+public class Building { 
     private String name;
     private int gain;//how many cookies it adds
     private int number;//how many buildings made
@@ -46,7 +46,7 @@ public class Building {
         }
     }
     
-    public double cookieGain(CookieGame game)
+    public double cookieGain()
     {
         return gain*number*multiplier/delay;
     }
