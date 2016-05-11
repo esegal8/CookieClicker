@@ -18,6 +18,7 @@ public class CookieGame extends CookieClickerProject
     private double totalCookies;
     private int cps;
     private int totalClicks;
+    private int upgradeCounter;
     public CookieGame()
     {
         Scanner sc= new Scanner(System.in);
@@ -61,6 +62,10 @@ public class CookieGame extends CookieClickerProject
     }
     public int getTotalClicks()
     {
-        return totalClicks;
+        return totalClicks; 
+    }
+    public int getTotalUpgrades()
+    {
+        return upgradeCounter;
     }
 }

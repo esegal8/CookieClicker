@@ -53,8 +53,15 @@ public class Building {
     {
         return gain*number*multiplier/delay;
     }
+
     public static int getNumBuildings()
     {
         return totalBuilt;
+
+    
+    public void changeMultiplier(double d)
+    {
+        multiplier*=d;
+
     }
 }
