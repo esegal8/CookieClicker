@@ -9,7 +9,7 @@ public class CookieClickerProject{
     {
         CookieGame pie = new CookieGame();
         pie.mainRunner();
-        System.out.println(pie.toString());
+        System.out.println(pie);
         
     }
  
