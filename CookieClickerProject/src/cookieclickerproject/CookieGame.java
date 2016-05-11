@@ -16,6 +16,8 @@ public class CookieGame extends CookieClickerProject
     private final String bakeryName;
     private double numCookies;
     private double totalCookies;
+    private int cps;
+    private int totalClicks;
     public CookieGame()
     {
         Scanner sc= new Scanner(System.in);
@@ -52,5 +54,13 @@ public class CookieGame extends CookieClickerProject
         return ("\n\n(づ｡◕‿‿◕｡)づ :･ﾟ✧Welcome to your Bakery✧ﾟ･: *ヽ(◕ヮ◕ヽ)\n*  *  *  *  *  *  *  *  *  *  *  \n{[ "
                 +bakeryName+"'s Bakery ]}\nNumber of Cookies: "+numCookies+"\nTotal Cookies Earned: "
                 +totalCookies);
+    }
+    public int getClicksPerSecond()
+    {
+        return cps;
+    }
+    public int getTotalClicks()
+    {
+        return totalClicks;
     }
 }
