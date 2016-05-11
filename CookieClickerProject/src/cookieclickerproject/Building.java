@@ -55,4 +55,8 @@ public class Building {
     {
         multiplier=d;
     }
+    public int getNumBuildings()
+    {
+        return number;
+    }
 }

@@ -29,7 +29,7 @@ public class AchievementList {
         pie.add(new Achievement("Did you say Doge Coin Miners?"));
         pie.add(new Achievement("Filthy Rich"));
         pie.add(new Achievement("My Brain Hurts"));
-        pie.add(new Achievement("Abstinence"));
+        pie.add(new Achievement("The Cookie Clicker"));
         pie.add(new Achievement("Addicted"));
     }
     public void CheckA1(CookieGame hi)
@@ -84,21 +84,25 @@ public class AchievementList {
     {
         
     }
-    public void CheckA13(CookieGame hi)
+    public void CheckA13(Building hash)
     {
-        
+        if(hash.getNumBuildings()>=60 && !!(pie.get(12).getBool()))
+            pie.get(12).setBool(true);
     }
-    public void CheckA14(CookieGame hi)
+    public void CheckA14(Building database)
     {
-        
+        if(database.getNumBuildings()>=40 && !!(pie.get(13).getBool()))
+            pie.get(13).setBool(true); 
     }
-    public void CheckA15(CookieGame hi)
+    public void CheckA15(Building print)
     {
-        
+        if(print.getNumBuildings()>=20 && !!(pie.get(14).getBool()))
+            pie.get(14).setBool(true);
     }
-    public void CheckA16(CookieGame hi)
+    public void CheckA16(Building complicated)
     {
-        
+        if(complicated.getNumBuildings()>=5 && !!(pie.get(15).getBool()))
+            pie.get(15).setBool(true);
     }
     public void CheckA17(CookieGame hi)
     {
@@ -108,5 +112,4 @@ public class AchievementList {
     {
         
     }
-    
 }
