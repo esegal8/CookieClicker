@@ -50,4 +50,9 @@ public class Building {
     {
         return gain*number*multiplier/delay;
     }
+    
+    public void setMultiplier(double d)
+    {
+        multiplier=d;
+    }
 }

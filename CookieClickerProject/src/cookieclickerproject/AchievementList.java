@@ -39,11 +39,14 @@ public class AchievementList {
     }
     public void CheckA2(CookieGame hi)
     {
-        
+        if ((hi.getTotalCookies()>=10000) && !(pie.get(0).getBool()))
+            pie.get(1
+            ).setBool(true);
     }
     public void CheckA3(CookieGame hi)
     {
-        
+        if (hi.getBakeryName().equals("Elliot"))
+            pie.get(2).setBool(true);
     }
     public void CheckA4(CookieGame hi)
     {
