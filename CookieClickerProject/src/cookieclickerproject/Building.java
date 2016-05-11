@@ -16,6 +16,7 @@ public class Building {
     private double multiplier=1.0;//upgrades change this number
     private int cost;//how much one building costs
     private int delay;//how long it takes to gain once
+    private static int totalBuilt=0;
     public Building(String name, int gain,int cost,int delay)
     {
         //delay should be in milliseconds so 1 sec=1000 millisec
@@ -33,14 +34,16 @@ public class Building {
             game.subtractCookies(cost);
             number++;
             cost*=1.15;
+            totalBuilt++;
         }
+        
     }
     
     public void sell(CookieGame game)
     {
         if (number>0)
         {
-            game.addCookies(cost);
+            game.addCookies(cost/2);
             number--;
             cost/=1.15;
         }
@@ -50,9 +53,15 @@ public class Building {
     {
         return gain*number*multiplier/delay;
     }
-    
-    public void setMultiplier(double d)
+
+    public static int getNumBuildings()
     {
-        multiplier=d;
+        return totalBuilt;
+
+    
+    public void changeMultiplier(double d)
+    {
+        multiplier*=d;
+
     }
 }
