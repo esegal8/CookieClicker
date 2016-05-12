@@ -10,7 +10,9 @@ package cookieclickerproject;
  *
  * @author esegal8
  */
-import java.util.*;
+import java.util.Scanner;
+import javax.swing.Timer;
+import java.awt.event.*;
 
 public class CookieGame extends CookieClickerProject implements ActionListener
 {
@@ -34,7 +36,7 @@ public class CookieGame extends CookieClickerProject implements ActionListener
     {
         mainRunner();
     }
-    }
+    
     public void mainRunner() //main method, starts the game
     {
         
