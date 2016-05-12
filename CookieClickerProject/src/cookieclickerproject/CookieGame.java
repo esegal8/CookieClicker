@@ -11,7 +11,8 @@ package cookieclickerproject;
  * @author esegal8
  */
 import java.util.*;
-public class CookieGame extends CookieClickerProject
+
+public class CookieGame extends CookieClickerProject implements ActionListener
 {
     private final String bakeryName;
     private double numCookies;
@@ -19,6 +20,7 @@ public class CookieGame extends CookieClickerProject
     private int cps;
     private int totalClicks;
     private int upgradeCounter;
+    private Timer time= new Timer(1000,this);
     public CookieGame()
     {
         Scanner sc= new Scanner(System.in);
@@ -26,6 +28,12 @@ public class CookieGame extends CookieClickerProject
         bakeryName= sc.nextLine();
         numCookies=0.0;
         totalCookies=0.0;
+        time.start();
+    }
+    public void actionPerformed(ActionEvent ae)
+    {
+        mainRunner();
+    }
     }
     public void mainRunner() //main method, starts the game
     {
