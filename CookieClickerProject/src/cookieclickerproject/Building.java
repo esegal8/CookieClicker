@@ -57,11 +57,15 @@ public class Building {
     public static int getNumBuildings()
     {
         return totalBuilt;
-
+    }
     
     public void changeMultiplier(double d)
     {
         multiplier*=d;
 
+    }
+    public int getNumBuildings()
+    {
+        return number;
     }
 }
