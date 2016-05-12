@@ -34,7 +34,7 @@ public class CookieGame extends CookieClickerProject implements ActionListener
     {
         mainRunner();
     }
-    }
+    
     public void mainRunner() //main method, starts the game
     {
         
@@ -61,7 +61,7 @@ public class CookieGame extends CookieClickerProject implements ActionListener
     }
     public String toString(){ //This is a temporary test method
         return ("\n\n(づ｡◕‿‿◕｡)づ :･ﾟ✧Welcome to your Bakery✧ﾟ･: *ヽ(◕ヮ◕ヽ)\n*  *  *  *  *  *  *  *  *  *  *  \n{[ "
-                +bakeryName+"'s Bakery ]}\nNumber of Cookies: "+numCookies+"\nTotal Cookies Earned: "
+                +bakeryName+"'s Bakery ]}\nNumber of Cookies: "+((int)(numCookies))+"\nTotal Cookies Earned: "
                 +totalCookies);
     }
     public int getClicksPerSecond()

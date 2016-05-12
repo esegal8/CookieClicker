@@ -30,6 +30,7 @@ public class AchievementList {
         pie.add(new Achievement("Filthy Rich"));
         pie.add(new Achievement("My Brain Hurts"));
         pie.add(new Achievement("The Cookie Clicker"));
+        pie.add(new Achievement("Idle M@ster"))
         pie.add(new Achievement("Addicted"));
     }
     public void CheckA1(CookieGame hi)
@@ -115,10 +116,23 @@ public class AchievementList {
     }
     public void CheckA17(CookieGame hi)
     {
-        
+        if (hi.getCookiesClicked()>=10000 && !!(pie.get(16).getBool()))
+            pie.get(16).setBool(true);
     }
     public void CheckA18(CookieGame hi)
     {
-        
+        if(hi.getCookiesBuilt()>=25000)
+            pie.get(17).setBool(true);
+    }
+    public void CheckA19()
+    {
+        boolean check=true;
+        for(int i=0;i<pie.size()-1;i++ )
+        {
+            if(i!=0)
+                if (!pie.get(i).getBool())
+                   check=false 
+        }
+        pie.get(18).setBool(check);
     }
 }
