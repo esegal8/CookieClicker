@@ -54,10 +54,10 @@ public class Building {
         return gain*number*multiplier/delay;
     }
 
-    public static int getNumBuildings()
+    public static int getTotalBuildings()
     {
         return totalBuilt;
-
+    }
     
     public void changeMultiplier(double d)
     {
