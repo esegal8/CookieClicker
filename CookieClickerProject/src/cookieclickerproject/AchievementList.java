@@ -50,7 +50,7 @@ public class AchievementList {
     }
     public void CheckA4(CookieGame hi)
     {
-        if ((Building.getNumBuildings()>=100) && !(pie.get(3).getBool()))
+        if ((Building.getTotalBuildings()>=100) && !(pie.get(3).getBool()))
             pie.get(3).setBool(true);
     }
     public void CheckA5(CookieGame hi)
