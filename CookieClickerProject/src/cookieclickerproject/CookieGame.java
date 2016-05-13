@@ -16,18 +16,19 @@ import java.awt.event.*;
 
 public class CookieGame extends CookieClickerProject implements ActionListener
 {
-    private final String bakeryName;
+    private String bakeryName;
     private double numCookies;
     private double totalCookies;
     private int cps;
     private int totalClicks;
     private int upgradeCounter;
     private Timer time= new Timer(1000,this);
+    private boolean first=true;
     public CookieGame()
     {
-        Scanner sc= new Scanner(System.in);
-        System.out.println("Please enter the name of your bakery: ");
-        bakeryName= sc.nextLine();
+        //Scanner sc= new Scanner(System.in);
+       // System.out.println("Please enter the name of your bakery: ");
+        //bakeryName= sc.nextLine();
         numCookies=0.0;
         totalCookies=0.0;
         time.start();
@@ -39,6 +40,14 @@ public class CookieGame extends CookieClickerProject implements ActionListener
     
     public void mainRunner() //main method, starts the game
     {
+        if (first)
+        {
+            Scanner sc= new Scanner(System.in);
+            System.out.println("Please enter the name of your bakery: ");
+            bakeryName= sc.nextLine();
+            toString();
+            first = false;
+        }
         
     }
     public double getNumCookies()
@@ -63,7 +72,7 @@ public class CookieGame extends CookieClickerProject implements ActionListener
     }
     public String toString(){ //This is a temporary test method
         return ("\n\n(づ｡◕‿‿◕｡)づ :･ﾟ✧Welcome to your Bakery✧ﾟ･: *ヽ(◕ヮ◕ヽ)\n*  *  *  *  *  *  *  *  *  *  *  \n{[ "
-                +bakeryName+"'s Bakery ]}\nNumber of Cookies: "+numCookies+"\nTotal Cookies Earned: "
+                +bakeryName+"'s Bakery ]}\nNumber of Cookies: "+((int)(numCookies))+"\nTotal Cookies Earned: "
                 +totalCookies);
     }
     public int getClicksPerSecond()
