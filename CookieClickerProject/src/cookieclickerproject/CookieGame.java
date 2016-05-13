@@ -24,6 +24,8 @@ public class CookieGame extends CookieClickerProject implements ActionListener
     private int upgradeCounter;
     private Timer time= new Timer(1000,this);
     private boolean first=true;
+    private double cookiesClicked;
+    private double cookiesBuilt;
     public CookieGame()
     {
         //Scanner sc= new Scanner(System.in);
@@ -86,5 +88,13 @@ public class CookieGame extends CookieClickerProject implements ActionListener
     public int getTotalUpgrades()
     {
         return upgradeCounter;
+    }
+    public double getCookiesClicked()
+    {
+        return cookiesClicked;
+    }
+    public double getCookiesBuilt()
+    {
+        return cookiesBuilt;
     }
 }
