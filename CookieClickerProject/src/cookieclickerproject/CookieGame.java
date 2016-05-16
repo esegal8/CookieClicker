@@ -1,18 +1,15 @@
-package cookieclickerproject;
-
 /*
  * To change this license header, choose License Headers in Project Properties.
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
+package cookieclickerproject;
 
 /**
  *
  * @author esegal8
  */
-import java.util.Scanner;
-import javax.swing.Timer;
-import java.awt.event.*;
+
 
 public class CookieGame extends CookieClickerProject implements ActionListener
 {
@@ -97,4 +94,7 @@ public class CookieGame extends CookieClickerProject implements ActionListener
     {
         return cookiesBuilt;
     }
+}
+
+    
 }
