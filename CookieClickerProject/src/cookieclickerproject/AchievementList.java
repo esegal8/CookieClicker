@@ -129,7 +129,7 @@ public class AchievementList {
         boolean check=true;
         for(int i=0;i<pie.size()-1;i++ )
         {
-            if(i!=0)
+            if(i!=2)
                 if (!pie.get(i).getBool())
                    check=false;
         }
