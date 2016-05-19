@@ -73,8 +73,18 @@ public class Cookies extends javax.swing.JFrame {
         Buildings.setText("Buildings");
 
         Toggle1.setText("1");
+        Toggle1.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                Toggle1ActionPerformed(evt);
+            }
+        });
 
         Toggle10.setText("10");
+        Toggle10.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                Toggle10ActionPerformed(evt);
+            }
+        });
 
         Toggle25.setText("25");
         Toggle25.addActionListener(new java.awt.event.ActionListener() {
@@ -91,16 +101,46 @@ public class Cookies extends javax.swing.JFrame {
         });
 
         cookieTree.setText("Cookie Tree");
+        cookieTree.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                cookieTreeActionPerformed(evt);
+            }
+        });
 
         hashCookie.setText("Hash-Cookie");
+        hashCookie.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                hashCookieActionPerformed(evt);
+            }
+        });
 
         cookieDatabase.setText("Cookie Database");
+        cookieDatabase.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                cookieDatabaseActionPerformed(evt);
+            }
+        });
 
         cookie3DPrinter.setText("Cookie 3D Printer");
+        cookie3DPrinter.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                cookie3DPrinterActionPerformed(evt);
+            }
+        });
 
         polymorphicRecursiveCookieLoops.setText("Polymorphic Recursive Cookie Loops");
+        polymorphicRecursiveCookieLoops.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                polymorphicRecursiveCookieLoopsActionPerformed(evt);
+            }
+        });
 
         GODCOOKIE.setText("GOD COOKIE");
+        GODCOOKIE.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                GODCOOKIEActionPerformed(evt);
+            }
+        });
 
         jlabel3.setText(""+buyOrSell);
 
@@ -205,6 +245,38 @@ public class Cookies extends javax.swing.JFrame {
     private void cookieActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_cookieActionPerformed
         // TODO add your handling code here:
     }//GEN-LAST:event_cookieActionPerformed
+
+    private void cookieTreeActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_cookieTreeActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_cookieTreeActionPerformed
+
+    private void hashCookieActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_hashCookieActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_hashCookieActionPerformed
+
+    private void cookieDatabaseActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_cookieDatabaseActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_cookieDatabaseActionPerformed
+
+    private void cookie3DPrinterActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_cookie3DPrinterActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_cookie3DPrinterActionPerformed
+
+    private void polymorphicRecursiveCookieLoopsActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_polymorphicRecursiveCookieLoopsActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_polymorphicRecursiveCookieLoopsActionPerformed
+
+    private void GODCOOKIEActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_GODCOOKIEActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_GODCOOKIEActionPerformed
+
+    private void Toggle1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_Toggle1ActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_Toggle1ActionPerformed
+
+    private void Toggle10ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_Toggle10ActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_Toggle10ActionPerformed
 
     /**
      * @param args the command line arguments

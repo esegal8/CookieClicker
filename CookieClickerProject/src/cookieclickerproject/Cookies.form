@@ -161,11 +161,17 @@
       <Properties>
         <Property name="text" type="java.lang.String" value="1"/>
       </Properties>
+      <Events>
+        <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="Toggle1ActionPerformed"/>
+      </Events>
     </Component>
     <Component class="javax.swing.JToggleButton" name="Toggle10">
       <Properties>
         <Property name="text" type="java.lang.String" value="10"/>
       </Properties>
+      <Events>
+        <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="Toggle10ActionPerformed"/>
+      </Events>
     </Component>
     <Component class="javax.swing.JToggleButton" name="Toggle25">
       <Properties>
@@ -187,31 +193,49 @@
       <Properties>
         <Property name="text" type="java.lang.String" value="Cookie Tree"/>
       </Properties>
+      <Events>
+        <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="cookieTreeActionPerformed"/>
+      </Events>
     </Component>
     <Component class="javax.swing.JButton" name="hashCookie">
       <Properties>
         <Property name="text" type="java.lang.String" value="Hash-Cookie"/>
       </Properties>
+      <Events>
+        <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="hashCookieActionPerformed"/>
+      </Events>
     </Component>
     <Component class="javax.swing.JButton" name="cookieDatabase">
       <Properties>
         <Property name="text" type="java.lang.String" value="Cookie Database"/>
       </Properties>
+      <Events>
+        <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="cookieDatabaseActionPerformed"/>
+      </Events>
     </Component>
     <Component class="javax.swing.JButton" name="cookie3DPrinter">
       <Properties>
         <Property name="text" type="java.lang.String" value="Cookie 3D Printer"/>
       </Properties>
+      <Events>
+        <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="cookie3DPrinterActionPerformed"/>
+      </Events>
     </Component>
     <Component class="javax.swing.JButton" name="polymorphicRecursiveCookieLoops">
       <Properties>
         <Property name="text" type="java.lang.String" value="Polymorphic Recursive Cookie Loops"/>
       </Properties>
+      <Events>
+        <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="polymorphicRecursiveCookieLoopsActionPerformed"/>
+      </Events>
     </Component>
     <Component class="javax.swing.JButton" name="GODCOOKIE">
       <Properties>
         <Property name="text" type="java.lang.String" value="GOD COOKIE"/>
       </Properties>
+      <Events>
+        <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="GODCOOKIEActionPerformed"/>
+      </Events>
     </Component>
     <Component class="javax.swing.JLabel" name="jlabel3">
       <Properties>
