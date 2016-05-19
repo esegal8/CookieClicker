@@ -14,6 +14,8 @@ public class Cookies extends javax.swing.JFrame {
     /**
      * Creates new form Cookies
      */
+    private boolean isBuying=true;
+    private String buyOrSell="";
     public Cookies(CookieGame pie) {
         initComponents();
     }
