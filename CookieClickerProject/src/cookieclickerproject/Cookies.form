@@ -136,6 +136,9 @@
       <Events>
         <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="cookieActionPerformed"/>
       </Events>
+      <AuxValues>
+        <AuxValue name="JavaCodeGenerator_SerializeTo" type="java.lang.String" value="Cookies_cookie"/>
+      </AuxValues>
     </Component>
     <Component class="javax.swing.JToggleButton" name="BuyOrSellToggle">
       <Properties>
