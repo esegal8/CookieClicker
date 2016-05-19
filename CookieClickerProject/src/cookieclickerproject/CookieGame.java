@@ -10,7 +10,9 @@ package cookieclickerproject;
  * @author esegal8
  */
 
-
+import java.util.Scanner;
+import java.awt.event.*;
+import javax.swing.Timer;
 public class CookieGame extends CookieClickerProject implements ActionListener
 {
     private String bakeryName;
@@ -42,12 +44,15 @@ public class CookieGame extends CookieClickerProject implements ActionListener
     {
         if (first)
         {
+            time.stop();
             Scanner sc= new Scanner(System.in);
             System.out.println("Please enter the name of your bakery: ");
             bakeryName= sc.nextLine();
             toString();
             first = false;
+            time.start();
         }
+        
         
     }
     public double getNumCookies()
@@ -98,4 +103,4 @@ public class CookieGame extends CookieClickerProject implements ActionListener
 }
 
     
-}
+

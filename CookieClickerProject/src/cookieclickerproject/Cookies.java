@@ -14,7 +14,7 @@ public class Cookies extends javax.swing.JFrame {
     /**
      * Creates new form Cookies
      */
-    public Cookies() {
+    public Cookies(CookieGame pie) {
         initComponents();
     }
 
@@ -306,11 +306,12 @@ public class Cookies extends javax.swing.JFrame {
         //</editor-fold>
 
         /* Create and display the form */
-        java.awt.EventQueue.invokeLater(new Runnable() {
-            public void run() {
-                new Cookies().setVisible(true);
-            }
-        });
+       // java.awt.EventQueue.invokeLater(new Runnable() {
+        //    public void run() {
+        //        new Cookies(CookieGame pie).setVisible(true);
+         //   }
+        //    )}
+        
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JLabel Buildings;
     private javax.swing.JToggleButton BuyOrSellToggle;
@@ -329,4 +330,4 @@ public class Cookies extends javax.swing.JFrame {
     private javax.swing.JLabel jlabel3;
     private javax.swing.JButton polymorphicRecursiveCookieLoops;
     // End of variables declaration//GEN-END:variables
-    }}
+}
