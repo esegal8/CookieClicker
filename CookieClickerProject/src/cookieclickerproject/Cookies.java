@@ -97,7 +97,7 @@ public class Cookies extends javax.swing.JFrame {
 
         jButton8.setText("GOD COOKIE");
 
-        jLabel3.setText("<User Code>");
+        jLabel3.setText(""+buyOrSell);
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);

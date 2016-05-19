@@ -14,6 +14,7 @@ package cookieclickerproject;
 public class CookieGame extends CookieClickerProject implements ActionListener
 {
     private String bakeryName;
+    private String buyOrSell;
     private double numCookies;
     private double totalCookies;
     private int cps;
