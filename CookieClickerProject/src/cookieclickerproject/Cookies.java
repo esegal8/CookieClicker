@@ -16,7 +16,11 @@ public class Cookies extends javax.swing.JFrame {
      */
     private boolean isBuying=true;
     private String buyOrSell="";
+
     private static CookieGame pie = null;
+
+    private int totalCookiesTest=0;
+
     public Cookies(CookieGame pie) {
         this.pie = pie;
         initComponents();
@@ -37,6 +41,7 @@ public class Cookies extends javax.swing.JFrame {
     private void initComponents() {
 
         jToggleButton2 = new javax.swing.JToggleButton();
+        label1 = new java.awt.Label();
         cookie = new javax.swing.JButton();
         BuyOrSellToggle = new javax.swing.JToggleButton();
         bakeryName = new javax.swing.JLabel();
@@ -52,6 +57,7 @@ public class Cookies extends javax.swing.JFrame {
         polymorphicRecursiveCookieLoops = new javax.swing.JButton();
         GODCOOKIE = new javax.swing.JButton();
         jlabel3 = new javax.swing.JLabel();
+        jLabel1 = new javax.swing.JLabel();
 
         jToggleButton2.setText("Sell");
         jToggleButton2.setToolTipText("");
@@ -61,9 +67,16 @@ public class Cookies extends javax.swing.JFrame {
             }
         });
 
+        label1.setText("label1");
+
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
         cookie.setText("Cookie");
+        cookie.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                cookieMouseClicked(evt);
+            }
+        });
         cookie.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 cookieActionPerformed(evt);
@@ -153,83 +166,98 @@ public class Cookies extends javax.swing.JFrame {
 
         jlabel3.setText(""+buyOrSell);
 
+        jLabel1.setText(""+totalCookiesTest);
+        jLabel1.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                jLabel1MouseClicked(evt);
+            }
+        });
+
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(layout.createSequentialGroup()
-                .addGap(36, 36, 36)
+                .addGap(38, 38, 38)
                 .addComponent(bakeryName, javax.swing.GroupLayout.PREFERRED_SIZE, 164, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 410, Short.MAX_VALUE)
-                .addComponent(Buildings)
-                .addGap(168, 168, 168))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addComponent(Buildings, javax.swing.GroupLayout.PREFERRED_SIZE, 139, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(234, 234, 234))
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
-                .addGap(62, 62, 62)
-                .addComponent(cookie, javax.swing.GroupLayout.PREFERRED_SIZE, 226, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
-            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(layout.createSequentialGroup()
+                        .addGap(85, 85, 85)
+                        .addComponent(jLabel1))
+                    .addGroup(layout.createSequentialGroup()
+                        .addGap(67, 67, 67)
+                        .addComponent(cookie, javax.swing.GroupLayout.PREFERRED_SIZE, 226, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 109, Short.MAX_VALUE)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(layout.createSequentialGroup()
                         .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
                             .addGroup(layout.createSequentialGroup()
-                                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
-                                    .addComponent(jlabel3)
-                                    .addComponent(BuyOrSellToggle))
-                                .addGap(18, 18, 18)
-                                .addComponent(Toggle1))
+                                .addComponent(BuyOrSellToggle)
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                    .addComponent(hashCookie)
+                                    .addComponent(cookieDatabase)
+                                    .addComponent(cookieTree)
+                                    .addComponent(CookieLoop)
+                                    .addGroup(layout.createSequentialGroup()
+                                        .addComponent(Toggle1)
+                                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                                        .addComponent(Toggle10))))
                             .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                                .addComponent(hashCookie)
-                                .addComponent(CookieLoop)
-                                .addComponent(cookieTree)))
+                                .addComponent(GODCOOKIE)
+                                .addComponent(cookie3DPrinter)))
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addComponent(Toggle10)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                         .addComponent(Toggle25))
                     .addGroup(layout.createSequentialGroup()
-                        .addGap(60, 60, 60)
-                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addComponent(cookie3DPrinter)
-                            .addComponent(cookieDatabase)
-                            .addComponent(polymorphicRecursiveCookieLoops)
-                            .addComponent(GODCOOKIE))))
-                .addGap(9, 9, 9))
+                        .addGap(102, 102, 102)
+                        .addComponent(polymorphicRecursiveCookieLoops)))
+                .addGap(56, 56, 56))
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addComponent(jlabel3)
+                .addGap(349, 349, 349))
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(layout.createSequentialGroup()
-                .addGap(24, 24, 24)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(bakeryName, javax.swing.GroupLayout.PREFERRED_SIZE, 33, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(Buildings))
-                .addGap(23, 23, 23)
+                    .addGroup(layout.createSequentialGroup()
+                        .addGap(37, 37, 37)
+                        .addComponent(bakeryName, javax.swing.GroupLayout.PREFERRED_SIZE, 33, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addGroup(layout.createSequentialGroup()
+                        .addGap(54, 54, 54)
+                        .addComponent(Buildings, javax.swing.GroupLayout.PREFERRED_SIZE, 43, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                .addGap(18, 18, 18)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(jLabel1)
                     .addComponent(Toggle1)
                     .addComponent(Toggle10)
                     .addComponent(Toggle25)
                     .addComponent(BuyOrSellToggle))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(jlabel3, javax.swing.GroupLayout.PREFERRED_SIZE, 16, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                .addGap(9, 9, 9)
                 .addComponent(CookieLoop)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(cookieTree)
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                    .addComponent(cookie, javax.swing.GroupLayout.PREFERRED_SIZE, 202, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addGroup(layout.createSequentialGroup()
-                        .addGap(28, 28, 28)
-                        .addComponent(cookie, javax.swing.GroupLayout.PREFERRED_SIZE, 202, javax.swing.GroupLayout.PREFERRED_SIZE))
-                    .addGroup(layout.createSequentialGroup()
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                        .addComponent(cookieTree)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                         .addComponent(hashCookie)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                         .addComponent(cookieDatabase)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                         .addComponent(cookie3DPrinter)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                         .addComponent(polymorphicRecursiveCookieLoops)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addGap(18, 18, 18)
                         .addComponent(GODCOOKIE)))
-                .addContainerGap(188, Short.MAX_VALUE))
+                .addContainerGap(193, Short.MAX_VALUE))
         );
 
         pack();
@@ -252,7 +280,7 @@ public class Cookies extends javax.swing.JFrame {
     }//GEN-LAST:event_Toggle25ActionPerformed
 
     private void cookieActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_cookieActionPerformed
-        // TODO add your handling code here:
+        totalCookiesTest+=100000;
     }//GEN-LAST:event_cookieActionPerformed
 
     private void cookieTreeActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_cookieTreeActionPerformed
@@ -286,6 +314,17 @@ public class Cookies extends javax.swing.JFrame {
     private void Toggle10ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_Toggle10ActionPerformed
         // TODO add your handling code here:
     }//GEN-LAST:event_Toggle10ActionPerformed
+
+    private void jLabel1MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jLabel1MouseClicked
+        totalCookiesTest+=100;
+    }//GEN-LAST:event_jLabel1MouseClicked
+
+    private void cookieMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_cookieMouseClicked
+        int x= totalCookiesTest+100;
+        totalCookiesTest=x;
+        jLabel1.setVisible(true);
+        jLabel1.setText(""+totalCookiesTest);
+    }//GEN-LAST:event_cookieMouseClicked
 
     /**
      * @param args the command line arguments
@@ -335,8 +374,10 @@ public class Cookies extends javax.swing.JFrame {
     private javax.swing.JButton cookieDatabase;
     private javax.swing.JButton cookieTree;
     private javax.swing.JButton hashCookie;
+    private javax.swing.JLabel jLabel1;
     private javax.swing.JToggleButton jToggleButton2;
     private javax.swing.JLabel jlabel3;
+    private java.awt.Label label1;
     private javax.swing.JButton polymorphicRecursiveCookieLoops;
     // End of variables declaration//GEN-END:variables
 }
