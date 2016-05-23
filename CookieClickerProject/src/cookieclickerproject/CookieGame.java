@@ -13,7 +13,7 @@ package cookieclickerproject;
 import java.util.Scanner;
 import java.awt.event.*;
 import javax.swing.Timer;
-public class CookieGame extends CookieClickerProject implements ActionListener
+public class CookieGame extends CookieClickerProject //implements ActionListener
 {
     private String bakeryName;
     private String buyOrSell;
@@ -22,39 +22,33 @@ public class CookieGame extends CookieClickerProject implements ActionListener
     private int cps;
     private int totalClicks;
     private int upgradeCounter;
-    private Timer time= new Timer(1000,this);
+    //private Timer time= new Timer(1000,this);
     private boolean first=true;
     private double cookiesClicked;
     private double cookiesBuilt;
+    private Cookies pie;
     public CookieGame()
     {
-        //Scanner sc= new Scanner(System.in);
-       // System.out.println("Please enter the name of your bakery: ");
-        //bakeryName= sc.nextLine();
         numCookies=0.0;
         totalCookies=0.0;
-        time.start();
+        Scanner sc= new Scanner(System.in);
+        System.out.println("Please enter the name of your bakery: ");
+        bakeryName= sc.nextLine();
+        System.out.println(toString());
+       
+        pie = new Cookies(this);
     }
-    public void actionPerformed(ActionEvent ae)
-    {
-        mainRunner();
-    }
+  //  public void actionPerformed(ActionEvent ae)
+   // {
+    //    mainRunner();
+   // }
     
-    public void mainRunner() //main method, starts the game
-    {
-        if (first)
-        {
-            time.stop();
-            Scanner sc= new Scanner(System.in);
-            System.out.println("Please enter the name of your bakery: ");
-            bakeryName= sc.nextLine();
-            toString();
-            first = false;
-            time.start();
-        }
+   // public void mainRunner() //main method, starts the game
+   // {
         
+    //        pie = new Cookies(this);
         
-    }
+   // }
     public double getNumCookies()
     {
         return numCookies;

@@ -16,12 +16,17 @@ public class Cookies extends javax.swing.JFrame {
      */
     private boolean isBuying=true;
     private String buyOrSell="";
-    private CookieGame pie = null;
+    private static CookieGame pie = null;
     public Cookies(CookieGame pie) {
         this.pie = pie;
         initComponents();
+        this.main();
     }
-
+   // public Cookies()
+   // {
+    // initComponents();   
+   // }
+    
     /**
      * This method is called from within the constructor to initialize the form.
      * WARNING: Do NOT modify this code. The content of this method is always
@@ -285,7 +290,7 @@ public class Cookies extends javax.swing.JFrame {
     /**
      * @param args the command line arguments
      */
-    public static void main(String args[]) {
+    public static void main() {
         /* Set the Nimbus look and feel */
         //<editor-fold defaultstate="collapsed" desc=" Look and feel setting code (optional) ">
         /* If Nimbus (introduced in Java SE 6) is not available, stay with the default look and feel.
@@ -310,11 +315,11 @@ public class Cookies extends javax.swing.JFrame {
         //</editor-fold>
 
         /* Create and display the form */
-        //java.awt.EventQueue.invokeLater(new Runnable() {
-        //    public void run() {
-         //       new Cookies(CookieGame pie).setVisible(true);
-        //    }
-         //   )}
+        java.awt.EventQueue.invokeLater(new Runnable()  {
+            public void run() {
+                new Cookies(pie).setVisible(true);
+            }
+        });
     }
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JLabel Buildings;

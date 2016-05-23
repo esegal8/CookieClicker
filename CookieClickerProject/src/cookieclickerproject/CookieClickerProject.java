@@ -8,7 +8,7 @@ public class CookieClickerProject{
     public static void main(String[]args)
     {
         CookieGame pie = new CookieGame();  
-        System.out.print(pie);
+       // System.out.print(pie);
     }
  
 }
