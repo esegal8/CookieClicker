@@ -312,7 +312,10 @@ public class Cookies extends javax.swing.JFrame {
     }//GEN-LAST:event_jLabel1MouseClicked
 
     private void cookieMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_cookieMouseClicked
-        totalCookiesTest+=100;
+        int x= totalCookiesTest+100;
+        totalCookiesTest=x;
+        jLabel1.setVisible(true);
+        jLabel1.setText(""+totalCookiesTest);
     }//GEN-LAST:event_cookieMouseClicked
 
     /**
