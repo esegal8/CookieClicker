@@ -17,7 +17,7 @@ public class Cookies extends javax.swing.JFrame {
     private boolean isBuying=true;
     private String buyOrSell="";
     private CookieGame pie = null;
-    private int totalCookiesTest;
+    private int totalCookiesTest=0;
     public Cookies(CookieGame pie) {
         this.pie = pie;
         initComponents();
@@ -33,6 +33,7 @@ public class Cookies extends javax.swing.JFrame {
     private void initComponents() {
 
         jToggleButton2 = new javax.swing.JToggleButton();
+        label1 = new java.awt.Label();
         cookie = new javax.swing.JButton();
         BuyOrSellToggle = new javax.swing.JToggleButton();
         bakeryName = new javax.swing.JLabel();
@@ -58,9 +59,16 @@ public class Cookies extends javax.swing.JFrame {
             }
         });
 
+        label1.setText("label1");
+
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
         cookie.setText("Cookie");
+        cookie.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                cookieMouseClicked(evt);
+            }
+        });
         cookie.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 cookieActionPerformed(evt);
@@ -151,6 +159,11 @@ public class Cookies extends javax.swing.JFrame {
         jlabel3.setText(""+buyOrSell);
 
         jLabel1.setText(""+totalCookiesTest);
+        jLabel1.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                jLabel1MouseClicked(evt);
+            }
+        });
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
@@ -290,6 +303,14 @@ public class Cookies extends javax.swing.JFrame {
         // TODO add your handling code here:
     }//GEN-LAST:event_Toggle10ActionPerformed
 
+    private void jLabel1MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jLabel1MouseClicked
+        System.out.print(totalCookiesTest);
+    }//GEN-LAST:event_jLabel1MouseClicked
+
+    private void cookieMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_cookieMouseClicked
+        totalCookiesTest+=100;
+    }//GEN-LAST:event_cookieMouseClicked
+
     /**
      * @param args the command line arguments
      */
@@ -341,6 +362,7 @@ public class Cookies extends javax.swing.JFrame {
     private javax.swing.JLabel jLabel1;
     private javax.swing.JToggleButton jToggleButton2;
     private javax.swing.JLabel jlabel3;
+    private java.awt.Label label1;
     private javax.swing.JButton polymorphicRecursiveCookieLoops;
     // End of variables declaration//GEN-END:variables
 }
