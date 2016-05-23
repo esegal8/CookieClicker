@@ -17,6 +17,7 @@ public class Cookies extends javax.swing.JFrame {
     private boolean isBuying=true;
     private String buyOrSell="";
     private CookieGame pie = null;
+    private int totalCookiesTest;
     public Cookies(CookieGame pie) {
         this.pie = pie;
         initComponents();
@@ -47,6 +48,7 @@ public class Cookies extends javax.swing.JFrame {
         polymorphicRecursiveCookieLoops = new javax.swing.JButton();
         GODCOOKIE = new javax.swing.JButton();
         jlabel3 = new javax.swing.JLabel();
+        jLabel1 = new javax.swing.JLabel();
 
         jToggleButton2.setText("Sell");
         jToggleButton2.setToolTipText("");
@@ -148,6 +150,8 @@ public class Cookies extends javax.swing.JFrame {
 
         jlabel3.setText(""+buyOrSell);
 
+        jLabel1.setText(""+totalCookiesTest);
+
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
@@ -163,7 +167,9 @@ public class Cookies extends javax.swing.JFrame {
                 .addComponent(cookie, javax.swing.GroupLayout.PREFERRED_SIZE, 226, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addGap(85, 85, 85)
+                .addComponent(jLabel1)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(layout.createSequentialGroup()
                         .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
@@ -204,7 +210,9 @@ public class Cookies extends javax.swing.JFrame {
                     .addComponent(Toggle25)
                     .addComponent(BuyOrSellToggle))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(jlabel3, javax.swing.GroupLayout.PREFERRED_SIZE, 16, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(jlabel3, javax.swing.GroupLayout.PREFERRED_SIZE, 16, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(jLabel1))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                 .addComponent(CookieLoop)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
@@ -247,7 +255,7 @@ public class Cookies extends javax.swing.JFrame {
     }//GEN-LAST:event_Toggle25ActionPerformed
 
     private void cookieActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_cookieActionPerformed
-        // TODO add your handling code here:
+        totalCookiesTest+=1000;
     }//GEN-LAST:event_cookieActionPerformed
 
     private void cookieTreeActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_cookieTreeActionPerformed
@@ -330,6 +338,7 @@ public class Cookies extends javax.swing.JFrame {
     private javax.swing.JButton cookieDatabase;
     private javax.swing.JButton cookieTree;
     private javax.swing.JButton hashCookie;
+    private javax.swing.JLabel jLabel1;
     private javax.swing.JToggleButton jToggleButton2;
     private javax.swing.JLabel jlabel3;
     private javax.swing.JButton polymorphicRecursiveCookieLoops;
