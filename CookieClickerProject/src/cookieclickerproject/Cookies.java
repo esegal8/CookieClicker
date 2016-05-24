@@ -19,7 +19,8 @@ public class Cookies extends javax.swing.JFrame {
     private static boolean firstTime = true;
     private static CookieGame pie;
 
-    private int totalCookiesTest=0;
+    private double totalCookiesTest=0.0;
+    private double cookiesPerClick=1.0;
 
     public Cookies(CookieGame pie) {
         this.pie = pie;
@@ -322,14 +323,18 @@ public class Cookies extends javax.swing.JFrame {
     }//GEN-LAST:event_jLabel1MouseClicked
 
     private void cookieMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_cookieMouseClicked
-        int x= totalCookiesTest+100;
+        double x= totalCookiesTest+cookiesPerClick;
         totalCookiesTest=x;
+        
         //jLabel1.setVisible(true);
         jLabel1.setText(""+totalCookiesTest);
     }//GEN-LAST:event_cookieMouseClicked
 
     private void CookieLoopMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_CookieLoopMouseClicked
+        pie.buildCookieLoop();
         totalCookiesTest=totalCookiesTest-100;
+        cookiesPerClick+=.1;
+        jLabel1.setText(""+totalCookiesTest);
     }//GEN-LAST:event_CookieLoopMouseClicked
 
     /**
