@@ -16,8 +16,8 @@ public class Cookies extends javax.swing.JFrame {
      */
     private boolean isBuying=true;
     private String buyOrSell="";
-
-    private static CookieGame pie = null;
+    private static boolean firstTime = true;
+    private static CookieGame pie;
 
     private int totalCookiesTest=0;
 
@@ -26,10 +26,6 @@ public class Cookies extends javax.swing.JFrame {
         initComponents();
         this.main();
     }
-   // public Cookies()
-   // {
-    // initComponents();   
-   // }
     
     /**
      * This method is called from within the constructor to initialize the form.
@@ -364,11 +360,14 @@ public class Cookies extends javax.swing.JFrame {
         //</editor-fold>
 
         /* Create and display the form */
+        if (firstTime){
         java.awt.EventQueue.invokeLater(new Runnable()  {
             public void run() {
                 new Cookies(pie).setVisible(true);
             }
         });
+                firstTime=false;
+        }
     }
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JLabel Buildings;
