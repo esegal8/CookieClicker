@@ -18,13 +18,27 @@ public class Cookies extends javax.swing.JFrame {
     private String buyOrSell="";
     private static boolean firstTime = true;
     private static CookieGame pie;
-
+    private static Building cookieLoop;
+    private static Building CookieTree;
+    private static Building HashCookie;
+    private static Building CookieDatabase;
+    private static Building Cookie3DPrinter;
+    private static Building PRCL;//PolymorphicRecursiveCookieLoop
+    private static Building GodCookie;
     private double totalCookiesTest=0.0;
     private double cookiesPerClick=1.0;
 
     public Cookies(CookieGame pie) {
         this.pie = pie;
         initComponents();
+        cookieLoop = new Building("Cookie Loop",1,10,10);//String name, int gain,int cost,int delay
+        CookieTree = new Building("Cookie Tree",10,200,1);
+        HashCookie = new Building("Hash Cookie",100,4000,1);
+        CookieDatabase = new Building("Cookie Database",1000,80000,1);
+        Cookie3DPrinter = new Building("Cookie 3D Printer",15000,100000,1);
+        PRCL = new Building("Polymorphic Recursive Cookie Loop",50000,800000,10);
+        GodCookie = new Building("GOD COOKIE",100000,5000000,10);
+        if (firstTime)
         this.main();
     }
     
@@ -125,6 +139,11 @@ public class Cookies extends javax.swing.JFrame {
         });
 
         cookieTree.setText("Cookie Tree");
+        cookieTree.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                cookieTreeMouseClicked(evt);
+            }
+        });
         cookieTree.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 cookieTreeActionPerformed(evt);
@@ -159,7 +178,12 @@ public class Cookies extends javax.swing.JFrame {
             }
         });
 
-        GODCOOKIE.setText("GOD COOKIE");
+        GODCOOKIE.setText("??????");
+        GODCOOKIE.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                GODCOOKIEMouseClicked(evt);
+            }
+        });
         GODCOOKIE.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 GODCOOKIEActionPerformed(evt);
@@ -168,7 +192,7 @@ public class Cookies extends javax.swing.JFrame {
 
         jlabel3.setText(""+buyOrSell);
 
-        jLabel1.setText(""+totalCookiesTest);
+        jLabel1.setText(""+(int)totalCookiesTest);
         jLabel1.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseClicked(java.awt.event.MouseEvent evt) {
                 jLabel1MouseClicked(evt);
@@ -323,19 +347,46 @@ public class Cookies extends javax.swing.JFrame {
     }//GEN-LAST:event_jLabel1MouseClicked
 
     private void cookieMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_cookieMouseClicked
+        
         double x= totalCookiesTest+cookiesPerClick;
         totalCookiesTest=x;
         
         //jLabel1.setVisible(true);
         jLabel1.setText(""+totalCookiesTest);
+        
+        if(totalCookiesTest>=5000000){
+            GODCOOKIE.setText("BEHOLD THE POWER OF GOD...");
+        }
+        
     }//GEN-LAST:event_cookieMouseClicked
 
     private void CookieLoopMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_CookieLoopMouseClicked
         //pie.buy(CookieLoop);
-        totalCookiesTest=totalCookiesTest-100;
+       if (totalCookiesTest-100>=0) {
+           totalCookiesTest=totalCookiesTest-100;
+       
         cookiesPerClick+=.1;
         jLabel1.setText(""+totalCookiesTest);
+       }
     }//GEN-LAST:event_CookieLoopMouseClicked
+
+    private void cookieTreeMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_cookieTreeMouseClicked
+        if (totalCookiesTest-100000>=0)
+        {
+            totalCookiesTest=totalCookiesTest-100000;
+        cookiesPerClick+=1;
+        jLabel1.setText(""+totalCookiesTest);
+        }
+    }//GEN-LAST:event_cookieTreeMouseClicked
+
+    private void GODCOOKIEMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_GODCOOKIEMouseClicked
+        if (totalCookiesTest<5000000)
+        {
+            GODCOOKIE.setText("Pitiful sacrifice... FEEL MY WRATH");
+            totalCookiesTest=totalCookiesTest/2;
+            jLabel1.setText(""+totalCookiesTest);
+        }
+    }//GEN-LAST:event_GODCOOKIEMouseClicked
 
     /**
      * @param args the command line arguments
