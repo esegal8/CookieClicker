@@ -164,7 +164,12 @@ public class Cookies extends javax.swing.JFrame {
             }
         });
 
-        GODCOOKIE.setText("GOD COOKIE");
+        GODCOOKIE.setText("??????");
+        GODCOOKIE.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                GODCOOKIEMouseClicked(evt);
+            }
+        });
         GODCOOKIE.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 GODCOOKIEActionPerformed(evt);
@@ -173,7 +178,7 @@ public class Cookies extends javax.swing.JFrame {
 
         jlabel3.setText(""+buyOrSell);
 
-        jLabel1.setText(""+totalCookiesTest);
+        jLabel1.setText(""+(int)totalCookiesTest);
         jLabel1.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseClicked(java.awt.event.MouseEvent evt) {
                 jLabel1MouseClicked(evt);
@@ -328,11 +333,17 @@ public class Cookies extends javax.swing.JFrame {
     }//GEN-LAST:event_jLabel1MouseClicked
 
     private void cookieMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_cookieMouseClicked
+        
         double x= totalCookiesTest+cookiesPerClick;
         totalCookiesTest=x;
         
         //jLabel1.setVisible(true);
         jLabel1.setText(""+totalCookiesTest);
+        
+        if(totalCookiesTest>=5000000){
+            GODCOOKIE.setText("BEHOLD THE POWER OF GOD...");
+        }
+        
     }//GEN-LAST:event_cookieMouseClicked
 
     private void CookieLoopMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_CookieLoopMouseClicked
@@ -353,6 +364,15 @@ public class Cookies extends javax.swing.JFrame {
         jLabel1.setText(""+totalCookiesTest);
         }
     }//GEN-LAST:event_cookieTreeMouseClicked
+
+    private void GODCOOKIEMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_GODCOOKIEMouseClicked
+        if (totalCookiesTest<5000000)
+        {
+            GODCOOKIE.setText("Pitiful sacrifice... FEEL MY WRATH");
+            totalCookiesTest=totalCookiesTest/2;
+            jLabel1.setText(""+totalCookiesTest);
+        }
+    }//GEN-LAST:event_GODCOOKIEMouseClicked
 
     /**
      * @param args the command line arguments
