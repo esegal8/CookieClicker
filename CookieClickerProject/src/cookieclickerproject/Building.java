@@ -9,15 +9,15 @@ package cookieclickerproject;
  *
  * @author esegal8
  */
-public class Building { 
+public class Building extends CookieGame { 
     private String name;
-    private int gain;//how many cookies it adds
+    private double gain;//how many cookies it adds
     private int number;//how many buildings made
     private double multiplier=1.0;//upgrades change this number
-    private int cost;//how much one building costs
-    private int delay;//how long it takes to gain once
+    private double cost;//how much one building costs
+    private double delay;//how long it takes to gain once
     private static int totalBuilt=0;
-    public Building(String name, int gain,int cost,int delay)
+    public Building(String name, double gain,double cost,double delay)
     {
         //delay should be in milliseconds so 1 sec=1000 millisec
         this.name=name;
@@ -27,11 +27,11 @@ public class Building {
 
     }
     
-    public void buy(CookieGame game)
+    public void buy(Building build)
     {
-        if (game.getNumCookies()>cost)
+        if (getNumCookies()>cost)
         {
-            game.subtractCookies(cost);
+            subtractCookies(cost);
             number++;
             cost*=1.15;
             totalBuilt++;
@@ -39,11 +39,11 @@ public class Building {
         
     }
     
-    public void sell(CookieGame game)
+    public void sell(Building build)
     {
         if (number>0)
         {
-            game.addCookies(cost/2);
+            addCookies(cost/2);
             number--;
             cost/=1.15;
         }
