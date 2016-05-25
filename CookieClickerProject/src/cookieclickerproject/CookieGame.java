@@ -19,13 +19,13 @@ public class CookieGame extends CookieClickerProject //implements ActionListener
     private String buyOrSell;
     private double numCookies;
     private double totalCookies;
-    private static Building cookieLoop;
+   /* private static Building cookieLoop;
     private static Building cookieTree;
     private static Building hashCookie;
     private static Building cookieDatabase;
     private static Building cookie3DPrinter;
     private static Building pRCL;//PolymorphicRecursiveCookieLoop
-    private static Building godCookie;
+  */  private static Building godCookie;
     private int cps;
     private int totalClicks;
     private int upgradeCounter;
@@ -42,14 +42,14 @@ public class CookieGame extends CookieClickerProject //implements ActionListener
         System.out.println("Please enter the name of your bakery: ");
         bakeryName= sc.nextLine();
         System.out.println(toString());
-        cookieLoop = new Building("Cookie Loop",1,10,10);//String name, int gain,int cost,int delay
+       /* cookieLoop = new Building("Cookie Loop",1,10,10);//String name, int gain,int cost,int delay
         cookieTree = new Building("Cookie Tree",10,200,1);
         hashCookie = new Building("Hash Cookie",100,4000,1);
         cookieDatabase = new Building("Cookie Database",1000,80000,1);
         cookie3DPrinter = new Building("Cookie 3D Printer",15000,100000,1);
         pRCL = new Building("Polymorphic Recursive Cookie Loop",50000,800000,10);
-        godCookie = new Building("GOD COOKIE",100000,5000000,10);
-        pie = new Cookies(this);
+       godCookie = new Building("GOD COOKIE",100000,5000000,10);
+      */  pie = new Cookies(this);
     }
   //  public void actionPerformed(ActionEvent ae)
    // {
