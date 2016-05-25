@@ -139,6 +139,11 @@ public class Cookies extends javax.swing.JFrame {
         });
 
         cookieTree.setText("Cookie Tree");
+        cookieTree.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                cookieTreeMouseClicked(evt);
+            }
+        });
         cookieTree.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 cookieTreeActionPerformed(evt);
@@ -345,11 +350,23 @@ public class Cookies extends javax.swing.JFrame {
     }//GEN-LAST:event_cookieMouseClicked
 
     private void CookieLoopMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_CookieLoopMouseClicked
-        pie.buildCookieLoop();
-        totalCookiesTest=totalCookiesTest-100;
+        //pie.buy(CookieLoop);
+       if (totalCookiesTest-100>=0) {
+           totalCookiesTest=totalCookiesTest-100;
+       
         cookiesPerClick+=.1;
         jLabel1.setText(""+totalCookiesTest);
+       }
     }//GEN-LAST:event_CookieLoopMouseClicked
+
+    private void cookieTreeMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_cookieTreeMouseClicked
+        if (totalCookiesTest-100000>=0)
+        {
+            totalCookiesTest=totalCookiesTest-100000;
+        cookiesPerClick+=1;
+        jLabel1.setText(""+totalCookiesTest);
+        }
+    }//GEN-LAST:event_cookieTreeMouseClicked
 
     /**
      * @param args the command line arguments
