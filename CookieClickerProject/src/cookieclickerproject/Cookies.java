@@ -25,12 +25,18 @@ public class Cookies extends javax.swing.JFrame {
     private static Building Cookie3DPrinter;
     private static Building PRCL;//PolymorphicRecursiveCookieLoop
     private static Building GodCookie;
+   
     private double totalCookiesTest=0.0;
     private double cookiesPerClick=1.0;
 
     public Cookies(CookieGame pie) {
+        //test = new Building("test",1,1,1);
         this.pie = pie;
+        //test = new Building("test",1,1,1);
         initComponents();
+        
+        if (firstTime){
+        this.main();
         cookieLoop = new Building("Cookie Loop",1,10,10);//String name, int gain,int cost,int delay
         CookieTree = new Building("Cookie Tree",10,200,1);
         HashCookie = new Building("Hash Cookie",100,4000,1);
@@ -38,8 +44,7 @@ public class Cookies extends javax.swing.JFrame {
         Cookie3DPrinter = new Building("Cookie 3D Printer",15000,100000,1);
         PRCL = new Building("Polymorphic Recursive Cookie Loop",50000,800000,10);
         GodCookie = new Building("GOD COOKIE",100000,5000000,10);
-        if (firstTime)
-        this.main();
+        }
     }
     
     /**
