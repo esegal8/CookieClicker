@@ -9,6 +9,9 @@ package cookieclickerproject;
  *
  * @author esegal8
  */
+import java.util.*;
+import java.awt.event.*;
+//import javax.swing.Timer;
 public class Cookies extends javax.swing.JFrame {
 
     /**
@@ -25,7 +28,7 @@ public class Cookies extends javax.swing.JFrame {
     private static Building Cookie3DPrinter;
     private static Building PRCL;//PolymorphicRecursiveCookieLoop
     private static Building GodCookie;
-   
+    private Timer time= new Timer();
     private double totalCookiesTest=0.0;
     private double cookiesPerClick=1.0;
     private int godCtr=0;

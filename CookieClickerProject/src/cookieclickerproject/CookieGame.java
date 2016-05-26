@@ -29,7 +29,7 @@ public class CookieGame extends CookieClickerProject //implements ActionListener
     private int cps;
     private int totalClicks;
     private int upgradeCounter;
-    //private Timer time= new Timer(1000,this);
+  //  private Timer time= new Timer(1000,this);
     private boolean first=true;
     private double cookiesClicked;
     private double cookiesBuilt;
@@ -44,10 +44,10 @@ public class CookieGame extends CookieClickerProject //implements ActionListener
         System.out.println(toString());
         pie = new Cookies(this);
     }
-  //  public void actionPerformed(ActionEvent ae)
-   // {
-    //    mainRunner();
-   // }
+ //   public void actionPerformed(ActionEvent ae)
+//    {
+        
+ //   }
     
    // public void mainRunner() //main method, starts the game
    // {
