@@ -24,4 +24,12 @@ public class Achievement {
     {
             return achieveGot;
     }
+    
+    public String toString()
+    {
+        if (achieveGot)
+            return ("You got achievement "+name+".");
+        else
+            return "Locked";
+    }
 }
