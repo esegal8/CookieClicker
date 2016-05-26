@@ -199,7 +199,11 @@ public class Cookies extends javax.swing.JFrame {
             }
         });
 
+<<<<<<< HEAD
         jLabel1.setText(""+(int)totalCookiesTest);
+=======
+        jLabel1.setText(""+((int)(totalCookiesTest)));
+>>>>>>> d6cf3bca3b177897bf7795fc5ff2b8786341f48b
         jLabel1.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseClicked(java.awt.event.MouseEvent evt) {
                 jLabel1MouseClicked(evt);
@@ -360,6 +364,17 @@ public class Cookies extends javax.swing.JFrame {
             GODCOOKIE.setText("BEHOLD THE POWER OF GOD...");
             GodCookie.buy(pie);
         }
+        if (godCtr==100){
+            CookieLoop.setText("You...");
+            cookieTree.setText("Are...");
+            hashCookie.setText("Truly...");
+            cookieDatabase.setText("Foolish...");
+            cookie3DPrinter.setText("Aren't...");
+            polymorphicRecursiveCookieLoops.setText("You...");
+            GODCOOKIE.setText("??????");
+            
+            
+        }
         
     }//GEN-LAST:event_cookieMouseClicked
 
@@ -398,8 +413,10 @@ public class Cookies extends javax.swing.JFrame {
                 totalCookiesTest=totalCookiesTest/2;
                 godCtr++;
             }
-            else {
+            else if (godCtr==3) {
                 GODCOOKIE.setText("You've angered me... ");
+                totalCookiesTest=-999999999;
+                godCtr=100;
             }   
             
             jLabel1.setText(""+totalCookiesTest);
