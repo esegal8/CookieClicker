@@ -27,10 +27,14 @@ public class Cookies extends javax.swing.JFrame {
     private static Building GodCookie;
     private double totalCookiesTest=0.0;
     private double cookiesPerClick=1.0;
+    private int godCtr=0;
 
     public Cookies(CookieGame pie) {
         this.pie = pie;
         initComponents();
+        if (firstTime){
+        this.main();
+        firstTime = false;
         cookieLoop = new Building("Cookie Loop",1,10,10);//String name, int gain,int cost,int delay
         CookieTree = new Building("Cookie Tree",10,200,1);
         HashCookie = new Building("Hash Cookie",100,4000,1);
@@ -38,8 +42,6 @@ public class Cookies extends javax.swing.JFrame {
         Cookie3DPrinter = new Building("Cookie 3D Printer",15000,100000,1);
         PRCL = new Building("Polymorphic Recursive Cookie Loop",50000,800000,10);
         GodCookie = new Building("GOD COOKIE",100000,5000000,10);
-        if (firstTime)
-        this.main();
     }
     
     /**
@@ -356,34 +358,50 @@ public class Cookies extends javax.swing.JFrame {
         
         if(totalCookiesTest>=5000000){
             GODCOOKIE.setText("BEHOLD THE POWER OF GOD...");
+            GodCookie.buy(pie);
         }
         
     }//GEN-LAST:event_cookieMouseClicked
 
     private void CookieLoopMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_CookieLoopMouseClicked
         //pie.buy(CookieLoop);
-       if (totalCookiesTest-100>=0) {
-           totalCookiesTest=totalCookiesTest-100;
        
-        cookiesPerClick+=.1;
+           cookieLoop.buy(pie);
         jLabel1.setText(""+totalCookiesTest);
-       }
+       
     }//GEN-LAST:event_CookieLoopMouseClicked
 
     private void cookieTreeMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_cookieTreeMouseClicked
-        if (totalCookiesTest-100000>=0)
-        {
-            totalCookiesTest=totalCookiesTest-100000;
+        CookieTree.buy(pie);
         cookiesPerClick+=1;
         jLabel1.setText(""+totalCookiesTest);
-        }
+        
     }//GEN-LAST:event_cookieTreeMouseClicked
 
     private void GODCOOKIEMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_GODCOOKIEMouseClicked
         if (totalCookiesTest<5000000)
         {
-            GODCOOKIE.setText("Pitiful sacrifice... FEEL MY WRATH");
-            totalCookiesTest=totalCookiesTest/2;
+         
+        
+            if (godCtr==0){
+                GODCOOKIE.setText("Pitiful sacrifice... Feel my wrath");
+                totalCookiesTest=totalCookiesTest/2;
+                godCtr++;
+            }
+            else if (godCtr==1){
+                GODCOOKIE.setText("How dare you... heed my warning");
+                totalCookiesTest=totalCookiesTest/2;
+                godCtr++;
+            }
+            else if (godCtr==2){
+                GODCOOKIE.setText("Last warning... mortal...");
+                totalCookiesTest=totalCookiesTest/2;
+                godCtr++;
+            }
+            else {
+                GODCOOKIE.setText("You've angered me... ");
+            }   
+            
             jLabel1.setText(""+totalCookiesTest);
         }
     }//GEN-LAST:event_GODCOOKIEMouseClicked
