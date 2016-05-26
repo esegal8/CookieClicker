@@ -48,6 +48,8 @@ public class Cookies extends javax.swing.JFrame {
         Cookie3DPrinter = new Building("Cookie 3D Printer",15000,100000,1);
         PRCL = new Building("Polymorphic Recursive Cookie Loop",50000,800000,10);
         GodCookie = new Building("GOD COOKIE",100000,5000000,10);
+    
+
         }
     }
     
@@ -412,8 +414,21 @@ public class Cookies extends javax.swing.JFrame {
             jLabel1.setText(""+totalCookiesTest);
         }
     }//GEN-LAST:event_GODCOOKIEMouseClicked
-
-    /**
+    public void Time(){
+        time.scheduleAtFixedRate(new TimerTask()
+            { 
+                public void run()
+                { 
+                    totalCookiesTest +=cookieLoop.cookieGain();
+                    totalCookiesTest +=CookieTree.cookieGain();
+                    totalCookiesTest +=HashCookie.cookieGain();
+                    totalCookiesTest +=CookieDatabase.cookieGain();
+                    totalCookiesTest +=Cookie3DPrinter.cookieGain();
+                    totalCookiesTest +=PRCL.cookieGain();
+                    totalCookiesTest +=GodCookie.cookieGain();
+                }
+            }, new Date(), 1000); 
+}/**
      * @param args the command line arguments
      */
     public static void main() {
