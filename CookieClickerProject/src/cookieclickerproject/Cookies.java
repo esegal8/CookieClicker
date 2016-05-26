@@ -198,7 +198,7 @@ public class Cookies extends javax.swing.JFrame {
 
         jlabel3.setText(""+buyOrSell);
 
-        jLabel1.setText(""+(int)totalCookiesTest);
+        jLabel1.setText(""+((int)(totalCookiesTest)));
         jLabel1.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseClicked(java.awt.event.MouseEvent evt) {
                 jLabel1MouseClicked(evt);
