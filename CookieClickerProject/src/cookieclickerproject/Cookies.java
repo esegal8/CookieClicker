@@ -9,10 +9,11 @@ package cookieclickerproject;
  *
  * @author esegal8
  */
-import java.util.*;
+//import java.util.*;
 import java.awt.event.*;
-//import javax.swing.Timer;
-public class Cookies extends javax.swing.JFrame {
+import javax.swing.Timer;
+import java.util.*;
+public class Cookies extends javax.swing.JFrame implements ActionListener{
 
     /**
      * Creates new form Cookies
@@ -27,31 +28,47 @@ public class Cookies extends javax.swing.JFrame {
     private static Building Cookie3DPrinter;
     private static Building PRCL;//PolymorphicRecursiveCookieLoop
     private static Building GodCookie;
-    private Timer time= new Timer();
-    private double totalCookiesTest=0.0;
+    //private Timer time= new Timer();
+    private static double totalCookiesTest=0.0;
     private double cookiesPerClick=1.0;
     private int godCtr=0;
+    private Timer time= new Timer(1000,this);
 
     public Cookies(CookieGame pie) {
         //test = new Building("test",1,1,1);
         this.pie = pie;
+        
         //test = new Building("test",1,1,1);
         initComponents();
+        //Pressy.doClick();
         if (firstTime){
         this.main();
         firstTime = false;
-        cookieLoop = new Building("Cookie Loop",1,10,10);//String name, int gain,int cost,int delay
+        cookieLoop = new Building("Cookie Loop",1,10,1);//String name, int gain,int cost,int delay
         CookieTree = new Building("Cookie Tree",10,200,1);
         HashCookie = new Building("Hash Cookie",100,4000,1);
         CookieDatabase = new Building("Cookie Database",1000,80000,1);
         Cookie3DPrinter = new Building("Cookie 3D Printer",15000,100000,1);
         PRCL = new Building("Polymorphic Recursive Cookie Loop",50000,800000,10);
         GodCookie = new Building("GOD COOKIE",100000,5000000,10);
-    
-
-        }
+        time.start();
+        java.util.Timer t = new java.util.Timer();
+        t.schedule(new TimerTask() {
+    @Override
+    public void run() {
+       jLabel1.setText(""+getTCT());
     }
-    
+        }, 0, 1000);}}
+    public static double getTCT()
+    {
+        return totalCookiesTest;
+    }
+    public void setTCT(double amt)
+    {
+  
+        totalCookiesTest = amt;
+        jLabel1.setText(""+totalCookiesTest);
+    }
     /**
      * This method is called from within the constructor to initialize the form.
      * WARNING: Do NOT modify this code. The content of this method is always
@@ -78,6 +95,8 @@ public class Cookies extends javax.swing.JFrame {
         polymorphicRecursiveCookieLoops = new javax.swing.JButton();
         GODCOOKIE = new javax.swing.JButton();
         jLabel1 = new javax.swing.JLabel();
+        jButton1 = new javax.swing.JButton();
+        Pressy = new javax.swing.JButton();
 
         jToggleButton2.setText("Sell");
         jToggleButton2.setToolTipText("");
@@ -199,16 +218,16 @@ public class Cookies extends javax.swing.JFrame {
             }
         });
 
-<<<<<<< HEAD
-        jLabel1.setText(""+(int)totalCookiesTest);
-=======
-        jLabel1.setText(""+((int)(totalCookiesTest)));
->>>>>>> d6cf3bca3b177897bf7795fc5ff2b8786341f48b
         jLabel1.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseClicked(java.awt.event.MouseEvent evt) {
                 jLabel1MouseClicked(evt);
             }
         });
+
+        jButton1.setText("jButton1");
+
+        Pressy.setText("Pressy");
+        Pressy.setActionCommand("pressy");
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
@@ -244,13 +263,21 @@ public class Cookies extends javax.swing.JFrame {
                                     .addComponent(CookieLoop)))
                             .addComponent(BuyOrSellToggle))
                         .addGap(128, 128, 128))))
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING, false)
+                    .addComponent(Pressy, javax.swing.GroupLayout.PREFERRED_SIZE, 0, Short.MAX_VALUE)
+                    .addComponent(jButton1, javax.swing.GroupLayout.PREFERRED_SIZE, 0, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addContainerGap())
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(layout.createSequentialGroup()
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(layout.createSequentialGroup()
-                        .addGap(104, 104, 104)
+                        .addContainerGap()
+                        .addComponent(jButton1, javax.swing.GroupLayout.PREFERRED_SIZE, 0, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addGap(93, 93, 93)
                         .addComponent(Buildings, javax.swing.GroupLayout.PREFERRED_SIZE, 43, javax.swing.GroupLayout.PREFERRED_SIZE))
                     .addGroup(layout.createSequentialGroup()
                         .addGap(31, 31, 31)
@@ -286,7 +313,9 @@ public class Cookies extends javax.swing.JFrame {
                         .addComponent(polymorphicRecursiveCookieLoops)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                         .addComponent(GODCOOKIE)))
-                .addContainerGap(180, Short.MAX_VALUE))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 112, Short.MAX_VALUE)
+                .addComponent(Pressy, javax.swing.GroupLayout.PREFERRED_SIZE, 0, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(68, 68, 68))
         );
 
         pack();
@@ -304,7 +333,10 @@ public class Cookies extends javax.swing.JFrame {
     private void CookieLoopActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_CookieLoopActionPerformed
        // TODO add your handling code here:
        // cookieLoop.buy(pie);
+       pie.setTotalCookies(totalCookiesTest);
        cookieLoop.buy(pie);
+       //jLabel1.setText(""+totalCookiesTest);
+       totalCookiesTest = pie.getTotalCookies();
        jLabel1.setText(""+totalCookiesTest);
     }//GEN-LAST:event_CookieLoopActionPerformed
 
@@ -317,15 +349,27 @@ public class Cookies extends javax.swing.JFrame {
     }//GEN-LAST:event_cookieActionPerformed
 
     private void cookieTreeActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_cookieTreeActionPerformed
-        // TODO add your handling code here:
+
+       pie.setTotalCookies(totalCookiesTest);
+       CookieTree.buy(pie);
+       totalCookiesTest = pie.getTotalCookies();
+       jLabel1.setText(""+totalCookiesTest);
     }//GEN-LAST:event_cookieTreeActionPerformed
 
     private void hashCookieActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_hashCookieActionPerformed
         // TODO add your handling code here:
+               pie.setTotalCookies(totalCookiesTest);
+       HashCookie.buy(pie);
+       totalCookiesTest = pie.getTotalCookies();
+       jLabel1.setText(""+totalCookiesTest);
     }//GEN-LAST:event_hashCookieActionPerformed
 
     private void cookieDatabaseActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_cookieDatabaseActionPerformed
         // TODO add your handling code here:
+               pie.setTotalCookies(totalCookiesTest);
+       CookieDatabase.buy(pie);
+       totalCookiesTest = pie.getTotalCookies();
+       jLabel1.setText(""+totalCookiesTest);
     }//GEN-LAST:event_cookieDatabaseActionPerformed
 
     private void cookie3DPrinterActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_cookie3DPrinterActionPerformed
@@ -349,14 +393,14 @@ public class Cookies extends javax.swing.JFrame {
     }//GEN-LAST:event_Toggle10ActionPerformed
 
     private void jLabel1MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jLabel1MouseClicked
-        
+        jLabel1.setText(""+totalCookiesTest);
     }//GEN-LAST:event_jLabel1MouseClicked
 
     private void cookieMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_cookieMouseClicked
         
         double x= totalCookiesTest+cookiesPerClick;
         totalCookiesTest=x;
-        
+        //PressyMouseClicked(evt);
         //jLabel1.setVisible(true);
         jLabel1.setText(""+totalCookiesTest);
         
@@ -378,12 +422,17 @@ public class Cookies extends javax.swing.JFrame {
         
     }//GEN-LAST:event_cookieMouseClicked
 
+    private void updateCookie(java.awt.event.MouseEvent evt)
+    {
+        jLabel1.setText(""+getTCT());
+    }
+    
     private void CookieLoopMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_CookieLoopMouseClicked
         //pie.buy(CookieLoop);
-       
+      /* System.out.println("clicktest");
         cookieLoop.buy(pie);
         jLabel1.setText(""+totalCookiesTest);
-       
+       */
     }//GEN-LAST:event_CookieLoopMouseClicked
 
     private void cookieTreeMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_cookieTreeMouseClicked
@@ -393,6 +442,12 @@ public class Cookies extends javax.swing.JFrame {
         
     }//GEN-LAST:event_cookieTreeMouseClicked
 
+    private void PressyMouseClicked(java.awt.event.MouseEvent evt)
+    {
+        System.out.println("Pressed");
+        jLabel1.setText(""+getTCT());
+        PressyMouseClicked(evt);
+    }
     private void GODCOOKIEMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_GODCOOKIEMouseClicked
         if (totalCookiesTest<5000000)
         {
@@ -422,7 +477,32 @@ public class Cookies extends javax.swing.JFrame {
             jLabel1.setText(""+totalCookiesTest);
         }
     }//GEN-LAST:event_GODCOOKIEMouseClicked
-    public void Time(){
+   /*public int getGain()
+   {
+       return this.getNumber()*this.getGain();
+   }*/
+
+
+    public void actionPerformed(ActionEvent ae)
+    {
+        double temp2 = getTCT();
+        double temp = 0;
+        temp +=(cookieLoop.getNumber()*cookieLoop.getGain());
+        temp +=CookieTree.cookieGain();
+        temp +=HashCookie.cookieGain();
+        temp +=CookieDatabase.cookieGain();
+        temp +=Cookie3DPrinter.cookieGain();
+        temp +=PRCL.cookieGain();
+        temp +=GodCookie.cookieGain();
+        temp2 +=temp;
+        setTCT(temp2);
+        jLabel1.setText(""+totalCookiesTest);
+        updateCookie(null);
+        //jLabel1.paintImmediately(jLabel1.getVisibleRect());
+        //jLabel1.setVisible(false);
+        //jLabel1.setVisible(true);
+    }
+    /*public void Time(){
         time.scheduleAtFixedRate(new TimerTask()
             { 
                 public void run()
@@ -437,7 +517,8 @@ public class Cookies extends javax.swing.JFrame {
                     jLabel1.setText(""+totalCookiesTest);
                 }
             }, new Date(), 1000); 
-}/**
+    }
+    /**
      * @param args the command line arguments
      */
     public static void main() {
@@ -479,6 +560,7 @@ public class Cookies extends javax.swing.JFrame {
     private javax.swing.JToggleButton BuyOrSellToggle;
     private javax.swing.JButton CookieLoop;
     private javax.swing.JButton GODCOOKIE;
+    private javax.swing.JButton Pressy;
     private javax.swing.JToggleButton Toggle1;
     private javax.swing.JToggleButton Toggle10;
     private javax.swing.JToggleButton Toggle25;
@@ -488,6 +570,7 @@ public class Cookies extends javax.swing.JFrame {
     private javax.swing.JButton cookieDatabase;
     private javax.swing.JButton cookieTree;
     private javax.swing.JButton hashCookie;
+    private javax.swing.JButton jButton1;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JToggleButton jToggleButton2;
     private java.awt.Label label1;

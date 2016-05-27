@@ -9,10 +9,10 @@ package cookieclickerproject;
  *
  * @author esegal8
  */
-public class Building extends CookieGame { 
+public class Building { 
     private String name;
     private int gain;//how many cookies it adds
-    private int number;//how many buildings made
+    private int number=0;//how many buildings made
     private double multiplier=1.0;//upgrades change this number
     private int cost;//how much one building costs
     private int delay;//how long it takes to gain once
@@ -29,9 +29,9 @@ public class Building extends CookieGame {
     
     public void buy(CookieGame game)
     {
-        if (game.getNumCookies()>cost)
+        if (game.getTotalCookies()>cost)
         {
-            game.subtractCookies(cost);
+            game.setTotalCookies(game.getTotalCookies()-cost);
             number++;
             cost*=1.15;
             totalBuilt++;
@@ -51,9 +51,17 @@ public class Building extends CookieGame {
     
     public double cookieGain()
     {
-        return gain*number*multiplier/delay;
+        this.getNumber();
+        return gain*number;//*multiplier;
     }
-
+    public int getNumber()
+    {
+        return number;
+    }
+    public int getGain()
+    {
+        return gain;
+    }
     public static int getTotalBuildings()
     {
         return totalBuilt;

@@ -55,10 +55,11 @@ public class CookieGame extends CookieClickerProject //implements ActionListener
     //        pie = new Cookies(this);
         
    // }
-    public double getNumCookies()
+    public void setTotalCookies(double num)
     {
-        return numCookies;
+        totalCookies = num;
     }
+    
     public double getTotalCookies()
     {
         return totalCookies;
