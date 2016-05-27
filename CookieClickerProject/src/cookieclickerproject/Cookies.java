@@ -374,10 +374,18 @@ public class Cookies extends javax.swing.JFrame implements ActionListener{
 
     private void cookie3DPrinterActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_cookie3DPrinterActionPerformed
         // TODO add your handling code here:
+               pie.setTotalCookies(totalCookiesTest);
+       Cookie3DPrinter.buy(pie);
+       totalCookiesTest = pie.getTotalCookies();
+       jLabel1.setText(""+totalCookiesTest);
     }//GEN-LAST:event_cookie3DPrinterActionPerformed
 
     private void polymorphicRecursiveCookieLoopsActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_polymorphicRecursiveCookieLoopsActionPerformed
         // TODO add your handling code here:
+               pie.setTotalCookies(totalCookiesTest);
+       PRCL.buy(pie);
+       totalCookiesTest = pie.getTotalCookies();
+       jLabel1.setText(""+totalCookiesTest);
     }//GEN-LAST:event_polymorphicRecursiveCookieLoopsActionPerformed
 
     private void GODCOOKIEActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_GODCOOKIEActionPerformed
@@ -475,6 +483,13 @@ public class Cookies extends javax.swing.JFrame implements ActionListener{
             }   
             
             jLabel1.setText(""+totalCookiesTest);
+        }
+        else {
+            
+               pie.setTotalCookies(totalCookiesTest);
+       GodCookie.buy(pie);
+       totalCookiesTest = pie.getTotalCookies();
+       jLabel1.setText(""+totalCookiesTest);
         }
     }//GEN-LAST:event_GODCOOKIEMouseClicked
    /*public int getGain()
